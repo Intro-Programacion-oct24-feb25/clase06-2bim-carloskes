@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Ejemplo061 {
     
     public static void main(String[] args) {
-      //  try{
+        //try{
             Scanner entrada = new Scanner(System.in);
             System.out.println("Ingrese valor 1:");
             int valor1 = entrada.nextInt(); // se espera un valor entero
