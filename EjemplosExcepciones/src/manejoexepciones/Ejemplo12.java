@@ -31,7 +31,8 @@ public class Ejemplo12 {
                     resultados[i] = suma1 / suma2;
                 }
                 bandera = false;
-
+                // si el proceso se itera correctamente la bandera se vuelve
+                // falsa para poder salir del ciclo, de lo contrario no.
             } catch (ArithmeticException e) {
                 System.out.printf("Error, hubo un error de tipo: %s\n", e);
                 entrada.nextLine();
