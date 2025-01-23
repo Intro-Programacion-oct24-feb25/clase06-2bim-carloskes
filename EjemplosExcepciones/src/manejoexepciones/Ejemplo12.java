@@ -16,10 +16,11 @@ public class Ejemplo12 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        boolean bandera = true;
         System.out.println("Ingrese cuantas operaciones quiere realizar");
         int valor = entrada.nextInt();
         int[] resultados = new int[valor];
-        boolean bandera = true;
+        String cadena = "";
         while (bandera) {
             try {
                 for (int i = 0; i < resultados.length; i++) {
@@ -29,16 +30,29 @@ public class Ejemplo12 {
                     int suma2 = entrada.nextInt();
                     resultados[i] = suma1 / suma2;
                 }
-
-            } catch (Exception e) {
                 bandera = false;
+
+            } catch (ArithmeticException e) {
+                System.out.printf("Error, hubo un error de tipo: %s\n", e);
+                entrada.nextLine();
+
+            } catch (InputMismatchException e) {
+                System.out.printf("Error, hubo un error de tipo: %s\n", e);
+                entrada.nextLine();
+            } catch (Exception e) {
+                System.out.printf("Error, hubo un error de tipo: %s\n", e);
+                entrada.nextLine();
             }
-            System.out.printf("", resultados);
+            for (int i = 0; i < resultados.length; i++) {
+                cadena = resultados[i]+ "\n" + cadena;
+            }
 
             /*Realizar un proceso repetitivo que permita realizar la división de 
         números ingresados por teclado; el resultado de cada división debe ir 
         almacenandose en cada posición del arreglo. Considerar las excepciones
         posibles*/
+            
         }
+        System.out.printf("Los resultados son:\n%s", cadena);
     }
 }
